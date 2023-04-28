@@ -5,18 +5,18 @@ namespace SRP
 {
     public class Estanteria
     {
-        public int codigo{get;set;}
-        public Dictionary<string,Libro> libros{get;}
+        public string Codigo{get;set;}
+        public Dictionary<string,Libro> Libros{get;}
 
-        public Estanteria(int codigo)
+        public Estanteria(string codigo)
         {
-            this.codigo = codigo;
-            this.libros = new Dictionary<string,Libro>();
+            this.Codigo = codigo;
+            this.Libros = new Dictionary<string,Libro>();
         }
 
         public void AddLibro(Libro nuevoLibro)
         {
-            this.libros.Add(nuevoLibro.Code, nuevoLibro);
+            this.Libros.Add(nuevoLibro.Code, nuevoLibro);
         }
     }
 }

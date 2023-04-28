@@ -7,8 +7,9 @@ namespace SRP
     {
         static void Main()
         {
-            Book book1 = new Book("Design Patterns","Erich Gamma & Others","001-034");
-            Book book2 = new Book("Pro C#","Troelsen","001-035");
+            Libro book1 = new Libro("Design Patterns","Erich Gamma & Others","001-034");
+            Libro book2 = new Libro("Pro C#","Troelsen","001-035");
+            Biblioteca LaBiblioteca = new Biblioteca("La Biblioteca");
             book1.ShelveBook("A","7");
             book2.ShelveBook("B","3");
 

@@ -5,18 +5,27 @@ namespace SRP
 {
     public class Sector
     {
-        public string nombre{get;}
-        private Dictionary<string, Estanteria> estanterias;
+        public string Nombre{get;}
+        private Dictionary<string, Estanteria> Estanterias;
 
         public Sector(string nombre)
         {
-            this.nombre = nombre;
-            this.estanterias = new Dictionary<string,Estanteria>();
+            this.Nombre = nombre;
+            this.Estanterias = new Dictionary<string,Estanteria>();
         }
 
-        public void AddEstanteria(Estanteria nuevaEstanteria)
+        public void CheckEstanteria(string nombre)
         {
-            this.estanterias.Add(nuevaEstanteria.codigo, nuevaEstanteria);
+            if (!this.Estanterias.ContainsKey(nombre))
+            {
+                Estanteria nuevaEstanteria = new Estanteria(nombre);
+                this.Estanterias.Add(nombre, nuevaEstanteria);
+            }
+        }
+        public void GuardarLibro(Libro libro, string estanteria)
+        {
+            this.CheckEstanteria(estanteria);
+            this.Estanterias[estanteria].AddLibro(libro);
         }
     }
 }
